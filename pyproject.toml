@@ -1,0 +1,24 @@
+[project]
+name = "vessel_planner"
+version = "0.1.0"
+description = "Default template for PDM package"
+authors = [
+    {name = "Matthew Taylor", email = "m.taylor@ncl-marine.com"},
+]
+dependencies = [
+    "flask>=3.0.3",
+    "pandas>=2.2.3",
+]
+requires-python = "==3.12.*"
+readme = "README.md"
+license = {text = "Proprietary"}
+
+
+[tool.pdm]
+distribution = false
+
+[tool.pdm.dev-dependencies]
+dev = [
+    "yapf>=0.40.2",
+    "pytest>=8.3.3",
+]
