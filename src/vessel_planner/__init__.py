@@ -2,14 +2,7 @@ import os
 
 from flask import Flask
 from flask_cors import CORS
-from flask import current_app
-import sqlite3
-def init_db():
-    db = sqlite3.connect(current_app.config["DATABASE"])
-    with open("schema.sql", mode="r") as f:
-        db.cursor().executescript(f.read())  
-    db.commit()
-    db.close()
+
 
 def create_app(test_config=None):
     print("Creating Flask app...")
@@ -17,8 +10,8 @@ def create_app(test_config=None):
     app = Flask(__name__, instance_relative_config=True)
     CORS(app)
     if test_config is None:
-        app.config.from_mapping(DATABASE=os.path.join(app.instance_path, 'db.sqlite'))
-        init_db()  
+        app.config["DATABASE"] = os.path.join(os.path.dirname(__file__), "../db.sqlite")
+
     else:
         app.config.from_mapping(test_config)
 
