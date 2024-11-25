@@ -1,1 +1,1 @@
-web: gunicorn src.vessel_planner:create_app()
+web: gunicorn "src.vessel_planner:create_app()"
