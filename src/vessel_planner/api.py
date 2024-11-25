@@ -7,7 +7,7 @@ from .db import get_db
 bp = Blueprint("api", __name__, url_prefix="/api")
 
 
-@bp.route("/get_prop", methods=["GET"])
+@bp.route("/get_prop", methods=["POST"])
 @cross_origin()
 def get_prop():
     prop = request.json["prop"]
