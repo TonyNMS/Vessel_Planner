@@ -1,15 +1,14 @@
 import os
-import sys
-from flask import Flask
 
+from flask import Flask
+from flask_cors import CORS
 
 
 def create_app(test_config=None):
     print("Creating Flask app...")
-    print("Current Working Directory:", os.getcwd())
-    print("Python Path:", sys.path)
+
     app = Flask(__name__, instance_relative_config=True)
-    
+    CORS(app)
     if test_config is None:
         app.config.from_pyfile("config.py", silent=True)
     else:
