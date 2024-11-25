@@ -1,1 +1,1 @@
-web: gunicorn "src.vessel_planner:create_app()"
+web: PYTHONPATH=src gunicorn "src.vessel_planner:create_app()"

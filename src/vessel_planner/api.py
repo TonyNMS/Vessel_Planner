@@ -2,7 +2,7 @@ from flask import Blueprint, request
 import json
 import pandas as pd
 from flask_cors import cross_origin
-from vessel_planner.db import get_db
+from .db import get_db
 
 bp = Blueprint("api", __name__, url_prefix="/api")
 
