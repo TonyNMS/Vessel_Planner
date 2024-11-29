@@ -31,6 +31,7 @@ def save_prop():
     return json.dumps("Pass") if rows else json.dumps(
         "Failed to write frame to database.")
 
+
 @bp.route("/check_or_create_task_table", methods=["POST"])
 @cross_origin()
 def check_or_create_task_table():
